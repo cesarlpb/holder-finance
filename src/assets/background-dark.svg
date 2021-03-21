@@ -1,0 +1,151 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="67.73cm" height="38.06cm" viewBox="0 0 1920 1079">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+      }
+
+      .cls-2 {
+        isolation: isolate;
+      }
+
+      .cls-3 {
+        clip-path: url(#clip-path);
+      }
+
+      .cls-4 {
+        fill: url(#Degradado_sin_nombre_37);
+      }
+
+      .cls-5, .cls-7 {
+        opacity: 0.5;
+      }
+
+      .cls-5 {
+        fill: url(#linear-gradient);
+      }
+
+      .cls-6 {
+        fill: #636363;
+        mix-blend-mode: overlay;
+      }
+
+      .cls-7 {
+        fill: url(#linear-gradient-2);
+      }
+
+      .cls-10, .cls-12, .cls-14, .cls-16, .cls-8 {
+        opacity: 0.3;
+        mix-blend-mode: color-burn;
+      }
+
+      .cls-8 {
+        fill: url(#radial-gradient);
+      }
+
+      .cls-9 {
+        fill: url(#linear-gradient-3);
+      }
+
+      .cls-10 {
+        fill: url(#radial-gradient-2);
+      }
+
+      .cls-11 {
+        fill: url(#linear-gradient-4);
+      }
+
+      .cls-12 {
+        fill: url(#radial-gradient-3);
+      }
+
+      .cls-13 {
+        fill: url(#linear-gradient-5);
+      }
+
+      .cls-14 {
+        fill: url(#radial-gradient-4);
+      }
+
+      .cls-15 {
+        fill: url(#linear-gradient-6);
+      }
+
+      .cls-16 {
+        fill: url(#radial-gradient-5);
+      }
+
+      .cls-17 {
+        fill: url(#linear-gradient-7);
+      }
+    </style>
+    <clipPath id="clip-path">
+      <rect class="cls-1" width="1920" height="1079"/>
+    </clipPath>
+    <linearGradient id="Degradado_sin_nombre_37" data-name="Degradado sin nombre 37" x1="7532.59" y1="3137.88" x2="8703.77" y2="3137.88" gradientTransform="translate(-7157.3 -2609.06)" gradientUnits="userSpaceOnUse">
+      <stop offset="0.02" stop-color="#45108a"/>
+      <stop offset="0.12" stop-color="#3f0f83"/>
+      <stop offset="0.7" stop-color="#1e085d"/>
+      <stop offset="1" stop-color="#12054e"/>
+      <stop offset="1" stop-color="#10054d"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient" x1="167.88" y1="1086.77" x2="689.7" y2="1086.77" gradientUnits="userSpaceOnUse">
+      <stop offset="0.02" stop-color="#45108a"/>
+      <stop offset="0.39" stop-color="#3d065f"/>
+      <stop offset="1" stop-color="#12054e"/>
+      <stop offset="1" stop-color="#10054d"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="-2504.12" y1="7376.01" x2="-2349.8" y2="7824.14" gradientTransform="matrix(0, -1, 1, 0, -6024.7, -2414.7)" xlink:href="#linear-gradient"/>
+    <radialGradient id="radial-gradient" cx="1500.96" cy="9097.59" r="88.31" gradientTransform="translate(9332.54 -1011.66) rotate(90)" gradientUnits="userSpaceOnUse">
+      <stop offset="0.2" stop-color="#666"/>
+      <stop offset="0.52" stop-color="#a9a9a9"/>
+      <stop offset="0.85" stop-color="#e7e7e7"/>
+      <stop offset="1" stop-color="#fff"/>
+    </radialGradient>
+    <linearGradient id="linear-gradient-3" x1="103.96" y1="6817.51" x2="103.96" y2="6709.85" gradientTransform="translate(-6507.16 593.61) rotate(-90)" xlink:href="#linear-gradient"/>
+    <radialGradient id="radial-gradient-2" cx="-1732.09" cy="17766.53" r="109.29" gradientTransform="translate(18476.22 2739.78) rotate(90)" xlink:href="#radial-gradient"/>
+    <linearGradient id="linear-gradient-4" x1="3336.93" y1="-1833.51" x2="3336.93" y2="-1966.76" gradientTransform="translate(2612.21 4313.93) rotate(-90)" xlink:href="#linear-gradient"/>
+    <radialGradient id="radial-gradient-3" cx="-10557.83" cy="15541.7" r="90.99" gradientTransform="translate(12202.82 -14695.2)" xlink:href="#radial-gradient"/>
+    <linearGradient id="linear-gradient-5" x1="12162.74" y1="375.69" x2="12162.74" y2="264.76" gradientTransform="translate(13783.98 1159.58) rotate(180)" xlink:href="#linear-gradient"/>
+    <radialGradient id="radial-gradient-4" cx="-10558.04" cy="15725.18" r="47.49" gradientTransform="translate(12370.03 -14802.68)" xlink:href="#radial-gradient"/>
+    <linearGradient id="linear-gradient-6" x1="12163.12" y1="155.07" x2="12163.12" y2="97.17" gradientTransform="translate(13962.71 1044.89) rotate(180)" xlink:href="#linear-gradient"/>
+    <radialGradient id="radial-gradient-5" cx="-10078.6" cy="15241.36" r="88.98" gradientTransform="translate(11648.09 -14955.36)" xlink:href="#radial-gradient"/>
+    <linearGradient id="linear-gradient-7" x1="11683.52" y1="674.32" x2="11683.52" y2="565.83" gradientTransform="translate(13229.78 899.09) rotate(180)" xlink:href="#linear-gradient"/>
+  </defs>
+  <title>fon2</title>
+  <g class="cls-2">
+    <g id="Capa_1" data-name="Capa 1">
+      <g class="cls-3">
+        <g>
+          <g>
+            <rect class="cls-4" x="375.29" y="-441.11" width="1171.18" height="1939.86" transform="translate(1489.7 -432.06) rotate(90)"/>
+            <path class="cls-5" d="M242.5,864.38c-.36,15.07-.29,30.14-.3,45.22,0,104.15-86,116.34-73,176.07,8.62,39.6,77.41,61.59,45.18,95.3-71.58,74.85-11.18,138.92,57.79,149.33,35.17,5.31,55.43-2.82,102.65-8.15,72.26-8.15,65.17,80,116.92,142.09,49.05,58.91,119.76,50.22,148.71-2.1,45.22-81.73-37.51-153.36,9.71-225.25,84.42-128.52,15.46-133.72-38.63-216.79-47-72.16-10.07-130.49-22.22-201.8-6.55-58.42-33.86-99.88-82.39-127.23C382.57,621,245.8,724.31,242.5,864.38Z"/>
+            <path class="cls-6" d="M-234.33,287.39c28,131.47,143.18,168.79,59.26,263.63-25.06,28.32-50.6,48-64.2,77.52C-278.1,712.92-156.25,768.06-186,847c-18.94,50.31-58.32,123.48,1.07,204.82,30.52,41.81,75,53.45,128.72,69.47,112.23,33.44,124.81,134.81,240.7,193.44,98.86,50,192.61,17.11,228.11-67.41,40.83-97.23-3-182.82-31-304.81-24.71-107.45,62-153.55,110.3-262.55,33.36-75.23,8-151.25-46-212.95-70.58-80.65-143.41-103.56-229.68-134C120.9,299.34,88.09,238.7,48.39,187.85-74.3,30.69-264.47,145.65-234.33,287.39Z"/>
+            <path class="cls-7" d="M1432.26-159.23c7.82,36.84-6.19,38.71-54.17,111.54-50.55,76.73-16.91,192.46,89.64,227.3,36.35,11.88,65.7,12.23,107.86,20.35,66.35,12.77,85.49,57.4,106.91,95.81,23.35,41.88,68.41,152.51,203.78,129.6,78.12-13.23,138.22-71.45,131.5-157-3.67-46.69-23.1-88.85-40-133.4-58.92-155.14-47.25-148.25-28.9-312.13-4.48-.3.12-6.44-2-30.09-10.09-110-97.18-121.65-194.24-138.72-145.17-25.53-155.46-122-238.25-143.08-26-6.64-61.32,3.2-87.52,36C1352.49-360.21,1418.35-224.8,1432.26-159.23Z"/>
+            <path class="cls-6" d="M1571.24,11.2c21.47,159.13,155.37,214,46.86,319.39-32.4,31.48-64.6,52.58-83.46,86.56-53.85,97,86.34,173.68,43.85,265-27.09,58.22-80.59,141.85-17.17,244.1,32.6,52.55,84.48,70.41,147.08,94.34,130.68,49.94,136.54,171.82,269.32,252.11,113.27,68.48,227.92,37.72,277.8-59.76,57.39-112.15,12.94-218.06-9.49-365.9-19.76-130.23,87.63-177.34,155-302.84,46.52-86.61,23.09-179.46-35.68-257.82C2288.57,183.93,2203.88,150.08,2103.85,106,1993.33,57.41,1959.7-17.79,1917-81.93,1785-280.19,1548.09-160.37,1571.24,11.2Z"/>
+          </g>
+          <g>
+            <circle class="cls-8" cx="234.95" cy="489.31" r="88.31"/>
+            <circle class="cls-9" cx="260.42" cy="489.65" r="64.53"/>
+          </g>
+          <g>
+            <circle class="cls-10" cx="709.69" cy="1007.69" r="109.29" transform="translate(-427.5 1482.98) rotate(-77.53)"/>
+            <circle class="cls-11" cx="716.91" cy="976.99" r="79.87" transform="translate(-391.87 1465.96) rotate(-77.53)"/>
+          </g>
+          <g>
+            <circle class="cls-12" cx="1644.99" cy="846.5" r="90.99" transform="translate(194.46 1994.75) rotate(-65.6)"/>
+            <circle class="cls-13" cx="1621.24" cy="835.33" r="66.49" transform="translate(190.68 1966.57) rotate(-65.6)"/>
+          </g>
+          <g>
+            <circle class="cls-14" cx="1811.99" cy="922.5" r="47.49" transform="translate(223.25 2191.43) rotate(-65.6)"/>
+            <circle class="cls-15" cx="1799.59" cy="916.67" r="34.71" transform="translate(221.28 2176.72) rotate(-65.6)"/>
+          </g>
+          <g>
+            <circle class="cls-16" cx="1569.49" cy="286" r="88.98" transform="translate(660.57 1597.09) rotate(-65.6)"/>
+            <circle class="cls-17" cx="1546.26" cy="275.08" r="65.03" transform="translate(656.88 1569.52) rotate(-65.6)"/>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

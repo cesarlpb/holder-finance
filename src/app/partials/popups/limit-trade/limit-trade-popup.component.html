@@ -1,0 +1,69 @@
+<div class="content" id="popup-limit-trade">
+  <div class="card">
+    <h2><span class="c-one">LIMIT</span><br />TRADE</h2>
+
+    <div class="buttons">
+      <span class="button" (click)="filter('ALL')">VIEW ALL TRADES</span>
+      <span class="button" (click)="filter('ACTIVES')">ALL ACTIVE TRADES</span>
+      <span class="button" (click)="filter('YOURS')">YOUR TRADES</span>
+    </div>
+
+    <div class="body">
+      <h4>
+        <span class="status">STATUS</span>
+        <span class="limit">TRADE LIMIT REQUEST</span>
+        <span class="fee">EXECUTION FEE</span>
+        <span class="profit">PROFITABLE</span>
+        <span class="actions">ACTIONS</span>
+      </h4>
+
+      <ul *ngIf="loading" class="center">
+        <li class="txt-center p-tb-30 disable-border">
+          Loading data from the Blockchain...
+        </li>
+        <div class="loader"></div>
+      </ul>
+      <ul *ngIf="!loading">
+        <li *ngFor="let order of orders | async">
+          <span class="status">{{
+            order.status == "1"
+              ? "Active"
+              : order.status == "2"
+              ? "Closed"
+              : "Canceled"
+          }}</span>
+          <span class="limit">{{ order.desc }}</span>
+          <span class="fee">{{ order.fee }}</span>
+          <span class="profit">{{ order.profitable ? "Yes" : "No" }}</span>
+          <span class="actions">
+            <i
+              class="cancel"
+              *ngIf="order.owner && order.status == '1'"
+              (click)="cancelOrder(order.id)"
+            >
+              Delete</i
+            >
+            <i
+              class="confirm"
+              *ngIf="order.profitable"
+              (click)="executeOrder(order.id)"
+            >
+              Confirm</i
+            >
+            <i class="no-actions" *ngIf="!order.owner && !order.profitable"
+              >No actions availables</i
+            >
+          </span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="footer">
+      <p>Total trades in the system {{ total }}</p>
+      <p>
+        Actual Fee: <input type="number" [(ngModel)]="fee" value="1" /> % fee
+        <span class="button apply" (click)="applyFee()">APPLY</span>
+      </p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,13 @@
+version: "3.4"
+
+services:
+  web:
+    image: drackp2m/node-git:15-alpine3.13
+    container_name: holder-web
+    hostname: holder-web
+    working_dir: /home/node/web
+    stdin_open: true
+    ports:
+      - 80:4200
+    volumes:
+      - .:/home/node/web:delegated

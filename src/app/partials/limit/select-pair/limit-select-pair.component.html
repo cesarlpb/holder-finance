@@ -1,0 +1,48 @@
+<div id="limit-select-pair">
+  <div class="card">
+    <h2>
+      <span>SELECT A</span><br />
+      TRADING PAIR
+    </h2>
+
+    <div class="body">
+      <div class="search">
+        <input
+          type="text"
+          placeholder="SEARCH OTHERS PAIRS"
+          (keyup)="search($event.srcElement)"
+        />
+      </div>
+
+      <ul>
+        <li
+          *ngFor="let pair of pairs"
+          (click)="selectPair(pair); continue()"
+          [ngClass]="{ selected: notConfirmed?.id === pair.id }"
+        >
+          <div class="icons">
+            <span
+              class="pair-one"
+              [ngStyle]="{ 'background-image': 'url(' + pair.firstIcon + ')' }"
+            ></span>
+            <span
+              class="pair-two"
+              [ngStyle]="{ 'background-image': 'url(' + pair.secondIcon + ')' }"
+            ></span>
+          </div>
+
+          {{ pair.firstName + " " + pair.secondName }}
+
+          <span class="info" *ngIf="pair.fee">Has transfer fee</span>
+        </li>
+
+        <li *ngIf="pairs === null" class="loading">Loading...</li>
+      </ul>
+
+      <p>
+        This software is a smart contract based technology, please use it at
+        your own risk.
+      </p>
+    </div>
+  </div>
+</div>

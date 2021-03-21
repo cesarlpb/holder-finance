@@ -1,0 +1,22 @@
+@use 'src/fonts' as f;
+@use 'src/variables' as v;
+
+div#limit-info {
+  width: 978px;
+  padding: 0 25px;
+  box-sizing: content-box;
+
+  div.card {
+    p {
+      span {
+        font-weight: f.$medium;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: v.$small) {
+  div#limit-info {
+    width: 560px;
+  }
+}

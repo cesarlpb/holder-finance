@@ -1,0 +1,44 @@
+<nav
+  id="navbar"
+  [ngClass]="{
+    'scroll-end': data.getScroll().bottom === 0
+  }"
+>
+  <div class="background">
+    <img class="light" src="assets/background.svg" alt="app background" />
+    <img
+      class="dark"
+      src="assets/background-dark.svg"
+      alt="app background dark"
+    />
+  </div>
+
+  <div class="content">
+    <div [ngClass]="{ links: true, open: data.isMenuOpened() }">
+      <span (click)="toogleMenuOpened()" class="button icon show-links"></span>
+
+      <div class="list">
+        <a [ngClass]="{ active: router.url === '/otc' }">
+          <button disabled>
+            <span data-tooltip="Under development" data-flow="bottom">OTC DESK</span>
+          </button>
+        </a>
+        <a
+          [ngClass]="{ active: router.url === '/limit' || router.url === '/' }"
+          routerLink="/limit"
+          (click)="limitClick()"
+          >HOLDER LIMIT PROTOCOL</a
+        >
+        <a href="javascript:void(0);" (click)="openDocumentsPopup()"
+          >DOCUMENTS</a
+        >
+      </div>
+    </div>
+
+    <span class="button wallet" (click)="walletClick()">
+      {{ address() ? (address() | hideWallet: 9) : "UNLOCK WALLET" }}
+    </span>
+
+    <span (click)="toggleDarkMode()" class="button icon dark-switch"></span>
+  </div>
+</nav>

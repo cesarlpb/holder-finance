@@ -1,0 +1,71 @@
+<div
+  id="app-content"
+  [ngClass]="{
+    scrolled: app.data.getScroll().top !== 0,
+    popup: appQuery.getPopup() | async,
+    dark: appQuery.getDark() | async
+  }"
+>
+  <div
+    class="main-container"
+    (click)="closeMenu($event)"
+    (scroll)="checkScroll($event)"
+  >
+    <div class="background">
+      <img class="light" src="assets/background.svg" alt="app background" />
+      <img
+        class="dark"
+        src="assets/background-dark.svg"
+        alt="app background dark"
+      />
+    </div>
+
+    <header>
+      <div class="background">
+        <img
+          class="background light"
+          src="assets/background.svg"
+          alt="app background"
+        />
+        <img
+          class="background dark"
+          src="assets/background-dark.svg"
+          alt="app background dark"
+        />
+      </div>
+
+      <div class="logo">
+        <img
+          class="big"
+          src="assets/logos/big.svg"
+          alt="holder finance logo big"
+        />
+        <img
+          class="big-dark"
+          src="assets/logos/big-dark.svg"
+          alt="holder finance logo big dark"
+        />
+        <img
+          class="small"
+          src="assets/logos/small.svg"
+          alt="holder finance logo small"
+        />
+        <img
+          class="small-dark"
+          src="assets/logos/small-dark.svg"
+          alt="holder finance logo small dark"
+        />
+      </div>
+    </header>
+
+    <section class="main-content">
+      <div class="flex">
+        <router-outlet></router-outlet>
+      </div>
+    </section>
+
+    <partial-navbar></partial-navbar>
+
+    <app-popups></app-popups>
+  </div>
+</div>

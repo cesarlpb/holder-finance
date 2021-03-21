@@ -1,0 +1,138 @@
+@use 'src/colors' as c;
+@use 'src/variables' as v;
+
+%navbar {
+  nav#navbar {
+    div.content {
+      a,
+      span.button {
+        color: black;
+      }
+
+      span.button {
+        &.icon {
+          &.show-links,
+          &.dark-switch {
+            &::before,
+            &::after {
+              display: block;
+            }
+
+            &::after {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media only screen and (max-width: v.$medium) {
+    nav#navbar {
+      div.content {
+        div.links {
+          div.list {
+            background-color: c.$light;
+
+            a {
+              border-bottom: solid 0.5px c.$grey;
+
+              &:hover {
+                background-color: #ebebeb80;
+              }
+
+              &.active {
+                background-color: #ebebeb;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media only screen and (max-width: v.$small) {
+    nav#navbar {
+      div.background {
+        background-color: c.$primary-two;
+
+        img {
+          &.dark {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+%navbar-dark {
+  nav#navbar {
+    div.content {
+      a,
+      span.button {
+        color: c.$light;
+      }
+
+      span.button {
+        background-color: c.$dark-three;
+        mix-blend-mode: hard-light;
+
+        &.icon {
+          &.show-links,
+          &.dark-switch {
+            &::after {
+              display: inherit;
+            }
+
+            &::before {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media only screen and (max-width: v.$medium) {
+    nav#navbar {
+      div.content {
+        div.links {
+          div.list {
+            background-color: c.$dark-one;
+
+            a {
+              border-color: c.$dark;
+
+              &:hover {
+                background-color: #10005280;
+              }
+
+              &.active {
+                background-color: #100052;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media only screen and (max-width: v.$small) {
+    nav#navbar {
+      div.background {
+        background-color: c.$dark-three;
+        
+        img {
+          &.light {
+            display: none;
+          }
+
+          &.dark {
+            display: initial;
+          }
+        }
+      }
+    }
+  }
+}

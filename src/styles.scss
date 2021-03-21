@@ -1,0 +1,58 @@
+@use 'destyle';
+@use 'fonts' as f;
+@use 'colors' as c;
+@use 'themes';
+@use 'styles/buttons';
+@use 'styles/card';
+
+html {
+  body {
+    font-family: Gotham;
+    font-size: 15px;
+    line-height: 17px;
+    font-weight: f.$light;
+
+    a {
+      &:hover {
+        color: initial;
+      }
+    }
+
+    .negative {
+      color: c.$negative;
+    }
+
+    .positive {
+      color: c.$positive;
+    }
+
+    .background {
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -o-user-select: none;
+      user-select: none;
+
+      * {
+
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -o-user-select: none;
+      user-select: none;
+      }
+    }
+
+    div#app-content {
+      @extend %themes;
+      @extend %buttons;
+      @extend %card;
+
+      &.dark {
+        @extend %themes-dark;
+        @extend %buttons-dark;
+        @extend %card-dark;
+      }
+    }
+  }
+}

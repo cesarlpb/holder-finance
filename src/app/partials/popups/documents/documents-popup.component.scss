@@ -1,0 +1,56 @@
+@use 'src/fonts' as f;
+
+div.content#popup-documents {
+  width: 480px;
+  padding: 0 25px;
+  box-sizing: content-box;
+
+  div.card {
+    h2 {
+      margin-bottom: 70px;
+    }
+
+    div.body {
+      display: flex;
+      justify-content: left;
+      margin-bottom: 0;
+
+      ul {
+        display: flex;
+        text-align: center;
+        flex-direction: column;
+        font-weight: f.$light;
+
+        li {
+          margin-bottom: 20px;
+
+          a {
+            display: flex;
+            align-items: center;
+
+            span.icon {
+              width: 40px;
+              height: 40px;
+              display: inline-block;
+              margin-right: 12px;
+            }
+
+            &:hover {
+              color: inherit;
+            }
+          }
+
+          &:not(.disabled):hover {
+            font-weight: f.$medium;
+          }
+
+          &.disabled {
+            a {
+              cursor: default;
+            }
+          }
+        }
+      }
+    }
+  }
+}

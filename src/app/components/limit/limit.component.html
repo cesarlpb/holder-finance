@@ -1,0 +1,12 @@
+<div class="container" id="limit">
+  <div class="content">
+    <partial-limit-info *ngIf="section() === 'INFO'"></partial-limit-info>
+    <partial-limit-actions
+      *ngIf="section() === 'ACTIONS'"
+    ></partial-limit-actions>
+    <partial-limit-select-pair
+      *ngIf="section() === 'SELECT_PAIR'"
+    ></partial-limit-select-pair>
+    <partial-limit-trade *ngIf="section() === 'TRADE'"></partial-limit-trade>
+  </div>
+</div>

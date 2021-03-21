@@ -1,0 +1,35 @@
+$primary-one: #febc31;
+$primary-two: #fe5500;
+$primary-three: #1d1511;
+
+$secondary-one: linear-gradient(90deg, #fe9700, #f7f7f8);
+$secondary-two: linear-gradient(90deg, #fe9700, #ffe263);
+$secondary-three: linear-gradient(90deg, #fe5500, #fe8900 65%);
+
+$dark-one: #24005e;
+$dark-two: linear-gradient(90deg, #45108a, #3d065f 40%, #10054d);
+$dark-three: #38346f;
+
+$light: #f7f7f8;
+$dark: #2c0c6b;
+
+$positive: #009245;
+$negative: #ed1c24;
+
+$box-shadow: rgb(0, 0, 0, 0.2) 0 0 10px;
+$grey: #e6e6e6;
+
+@function rotate($gradient, $deg) {
+  @if $gradient == linear-gradient(90deg, #fe9700, #f7f7f8) {
+    @return linear-gradient(90deg + $deg, #fe9700, #f7f7f8);
+  } @else if $gradient == linear-gradient(90deg, #fe9700, #ffe263) {
+    @return linear-gradient(90deg + $deg, #fe9700, #ffe263);
+  } @else if $gradient == linear-gradient(90deg, #fe5500, #fe8900 65%) {
+    @return linear-gradient(90deg + $deg, #fe5500, #fe8900 65%);
+  } @else if $gradient == linear-gradient(90deg, #45108a, #3d065f 40%, #10054d)
+  {
+    @return linear-gradient(90deg + $deg, #45108a, #3d065f 40%, #10054d);
+  } @else {
+    @error "Undefined gradient color";
+  }
+}

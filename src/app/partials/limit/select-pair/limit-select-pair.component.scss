@@ -1,0 +1,108 @@
+@use 'src/fonts' as f;
+
+div#limit-select-pair {
+  width: 500px;
+  padding: 0 25px;
+  box-sizing: content-box;
+
+  div.card {
+    padding: 40px 40px 25px;
+
+    div.body {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      margin-bottom: 34px;
+
+      div.search {
+        position: relative;
+        margin-bottom: 18px;
+
+        input {
+          font-size: 10px;
+          font-weight: f.$medium;
+          padding: 15px;
+          border-radius: 12px;
+          width: 184px;
+          height: 40px;
+          text-transform: uppercase;
+          padding-right: 40px;
+        }
+
+        &::after {
+          content: "";
+          display: block;
+          position: absolute;
+          width: 20px;
+          height: 20px;
+          right: 10px;
+          top: 10px;
+        }
+      }
+
+      ul {
+        width: 100%;
+        border-radius: 10px;
+        margin-bottom: 20px;
+        max-height: 393px;
+        overflow-x: hidden;
+        overflow-y: auto;
+
+        li {
+          height: 42px;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          font-size: 14px;
+          font-weight: f.$medium;
+          padding: 0 0 0 30px;
+          user-select: none;
+          cursor: pointer;
+
+          .icons {
+            position: relative;
+            padding-right: 16px;
+            margin-right: 20px;
+
+            span {
+              width: 24px;
+              height: 24px;
+              background-size: contain;
+              display: block;
+
+              &.pair-two {
+                position: absolute;
+                top: 0;
+                right: 0;
+              }
+            }
+          }
+
+          span.info {
+            margin-left: 12px;
+            padding: 0 7px;
+            font-size: 7px;
+            border-radius: 8px;
+            font-weight: f.$bold;
+            user-select: none;
+            cursor: pointer;
+          }
+
+          &:first-child {
+            margin-top: 16px;
+          }
+
+          &:last-child {
+            margin-bottom: 16px;
+            border: none;
+          }
+        }
+      }
+
+      p {
+        width: 100%;
+        font-size: 10px;
+      }
+    }
+  }
+}

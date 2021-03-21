@@ -1,0 +1,20 @@
+<section id="popups" [ngClass]="{ open: (appQuery.getPopup() | async) }">
+  <div class="background"></div>
+
+  <div class="container" (click)="closePopup($event)">
+    <div class="flex">
+      <popup-wallet-provider
+        *ngIf="(currentPopup() | async) === 'WALLET_PROVIDER'"
+      ></popup-wallet-provider>
+      <popup-select-pair
+        *ngIf="(currentPopup() | async) === 'SELECT_PAIR'"
+      ></popup-select-pair>
+      <popup-limit-trade
+        *ngIf="(currentPopup() | async) === 'LIMIT_TRADE'"
+      ></popup-limit-trade>
+      <popup-documents
+        *ngIf="(currentPopup() | async) === 'DOCUMENTS'"
+      ></popup-documents>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,324 @@
+@use 'src/colors' as c;
+@use 'src/fonts' as f;
+
+%limit-trade {
+  div#limit-trade {
+    div.card {
+      h3,
+      h4 {
+        color: c.$primary-one;
+      }
+
+      div.radius-box {
+        background-color: rgb(c.$grey, 0.3);
+      }
+
+      div.column.left {
+        div.from,
+        div.to {
+          div.background {
+            box-shadow: inset rgb(0, 0, 0, 0.024) 20px 20px 15px,
+              inset rgb(255, 255, 255, 0.6) -20px -20px 15px;
+          }
+
+          div.content {
+            h3 {
+              color: c.$primary-one;
+            }
+
+            div.info {
+              color: c.$primary-three;
+
+              div.crypto {
+                div.background {
+                  background-color: rgb(c.$grey, 0.5);
+                }
+
+                span.button {
+                  &.max {
+                    background-image: c.rotate(c.$secondary-two, 90deg);
+                  }
+                }
+
+                div.value {
+                  span.button.change {
+                    background: url(/assets/icons/arrow-down.svg) center
+                      no-repeat;
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        h4.price {
+          span.icon {
+            background-color: #efefef;
+
+            &::after {
+              background-image: url(/assets/icons/toggle-arrows.svg);
+              background-position: center;
+              background-repeat: no-repeat;
+            }
+          }
+        }
+
+        div.pair-info div.boxes {
+          div {
+            &.name p.value {
+              color: c.$primary-two;
+            }
+
+            p span.copy {
+              &::after {
+                background: url(/assets/icons/copy.svg) center no-repeat;
+              }
+
+              &:hover {
+                background-color: rgb(c.$grey, 1);
+              }
+            }
+          }
+        }
+
+        div.more-info {
+          ul {
+            li {
+              border-bottom: solid 0.5px #e8e8e8;
+
+              &:last-child {
+                border: none;
+              }
+            }
+          }
+        }
+      }
+
+      div.column.right {
+        span.button {
+          color: c.$primary-one;
+          border: solid 1px #e9e9e9;
+
+          &.active {
+            background-color: #e9e9e9;
+          }
+        }
+
+        div.transactions {
+          div.buttons {
+            > div {
+              span.button {
+                &.asc,
+                &.desc {
+                  &::after {
+                    background: url(/assets/icons/arrow-down.svg) center
+                      no-repeat;
+                  }
+                }
+              }
+            }
+          }
+
+          ul {
+            li {
+              border-bottom: solid 0.5px #e8e8e8;
+
+              &:last-child {
+                border: none;
+              }
+
+              span {
+                &.type {
+                  color: c.$primary-two;
+                }
+              }
+            }
+          }
+        }
+
+        div.orders {
+          div.top-buttons {
+            span.button {
+              &.active {
+                &::before {
+                  background-color: #e9e9e9;
+                }
+              }
+            }
+          }
+
+          ul {
+            border-bottom: solid 0.5px #e8e8e8;
+            border-top: solid 0.5px #e8e8e8;
+
+            li {
+              border-bottom: solid 0.5px #e8e8e8;
+
+              &:last-child {
+                border: none;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+%limit-trade-dark {
+  div#limit-trade {
+    div.card {
+      color: c.$light;
+
+      h3,
+      h4 {
+        color: c.$light;
+      }
+
+      div.radius-box {
+        background-color: rgb(c.$grey, 0.1);
+      }
+
+      div.column.left {
+        div.from,
+        div.to {
+          div.background {
+            box-shadow: none;
+            background-color: c.$dark-three;
+            mix-blend-mode: hard-light;
+          }
+
+          div.content {
+            h3 {
+              color: c.$light;
+            }
+
+            div.info {
+              color: c.$light;
+
+              div.crypto {
+                div.background {
+                  background-color: #04002b;
+                }
+
+                span.button {
+                  &.max {
+                    background-image: c.rotate(c.$dark-two, 90deg);
+                  }
+                }
+
+                div.value {
+                  span.button.change {
+                    background: url(/assets/icons/arrow-down-dark.svg) center
+                      no-repeat;
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        h4.price {
+          span.icon {
+            background-color: #100052;
+
+            &::after {
+              background-image: url(/assets/icons/toggle-arrows-dark.svg);
+            }
+          }
+        }
+
+        div.pair-info div.boxes {
+          div {
+            &.name p.value {
+              color: inherit;
+            }
+
+            p span.copy {
+              &::after {
+                background: url(/assets/icons/copy-dark.svg) center no-repeat;
+              }
+
+              &:hover {
+                background-color: rgb(c.$grey, 1);
+              }
+            }
+          }
+        }
+
+        div.more-info {
+          ul {
+            li {
+              border-bottom: solid 1px c.$dark;
+
+              &:last-child {
+                border: none;
+              }
+            }
+          }
+        }
+      }
+
+      div.column.right {
+        span.button {
+          color: c.$light;
+          border: solid 1px #e9e9e9;
+          background-color: transparent;
+
+          &.active {
+            background-color: c.$dark-one;
+            mix-blend-mode: hard-light;
+          }
+        }
+
+        div.transactions {
+          div.buttons {
+            > div {
+              span.button {
+                &.asc,
+                &.desc {
+                  &::after {
+                    background: url(/assets/icons/arrow-down-dark.svg) center
+                      no-repeat;
+                  }
+                }
+              }
+            }
+          }
+
+          ul {
+            li {
+              border-bottom: solid 1px c.$dark;
+            }
+          }
+        }
+
+        div.orders {
+          div.top-buttons {
+            span.button {
+              &.active {
+                &::before {
+                  background-color: #38176c;
+                  mix-blend-mode: hard-light;
+                }
+              }
+            }
+          }
+
+          ul {
+            border-bottom: solid 1px c.$dark;
+            border-top: solid 1px c.$dark;
+
+            li {
+              border-bottom: solid 1px c.$dark;
+
+              &:last-child {
+                border: none;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

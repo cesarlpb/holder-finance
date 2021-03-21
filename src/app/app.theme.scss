@@ -1,0 +1,102 @@
+@use 'src/colors' as c;
+@use 'src/variables' as v;
+
+%app {
+  div.main-container {
+    div.background {
+      img {
+        &.dark {
+          display: none;
+        }
+      }
+    }
+
+    header {
+      div.logo {
+        img {
+          &.small,
+          &.big-dark,
+          &.small-dark {
+            display: none;
+          }
+
+          &.big {
+            display: initial;
+          }
+        }
+      }
+    }
+  }
+
+  @media only screen and (max-width: v.$small) {
+    div.main-container {
+      header {
+        div.logo {
+          img {
+            &.big,
+            &.big-dark,
+            &.small-dark {
+              display: none;
+            }
+
+            &.small {
+              display: initial;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+%app-dark {
+  div.main-container {
+    div.background {
+      img {
+        &.light {
+          display: none;
+        }
+
+        &.dark {
+          display: initial;
+        }
+      }
+    }
+
+    header {
+      div.logo {
+        img {
+          &.big,
+          &.small,
+          &.small-dark {
+            display: none;
+          }
+
+          &.big-dark {
+            display: initial;
+          }
+        }
+      }
+    }
+  }
+
+  @media only screen and (max-width: v.$small) {
+    div.main-container {
+      header {
+        div.logo {
+          img {
+            &.big,
+            &.small,
+            &.big-dark {
+              display: none;
+            }
+
+            &.small-dark {
+              display: initial;
+            }
+          }
+        }
+      }
+    }
+  }
+}

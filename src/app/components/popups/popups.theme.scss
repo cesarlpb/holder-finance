@@ -1,0 +1,19 @@
+@use 'src/colors' as c;
+
+%popups {
+  section#popups {
+    div.background {
+      background-color: c.$primary-two;
+      mix-blend-mode: hard-light;
+    }
+  }
+}
+
+%popups-dark {
+  section#popups {
+    div.background {
+      background-color: #363647;
+      mix-blend-mode: hard-light;
+    }
+  }
+}

@@ -1,0 +1,303 @@
+[
+    {
+        "constant": true,
+        "inputs": [
+            {
+                "name": "",
+                "type": "uint256"
+            }
+        ],
+        "name": "deals",
+        "outputs": [
+            {
+                "name": "ID",
+                "type": "uint256"
+            },
+            {
+                "name": "walletOffer",
+                "type": "address"
+            },
+            {
+                "name": "tokenAddressOffer",
+                "type": "address"
+            },
+            {
+                "name": "amountOffered",
+                "type": "uint256"
+            },
+            {
+                "name": "tokenAddressRequest",
+                "type": "address"
+            },
+            {
+                "name": "amountRequest",
+                "type": "uint256"
+            },
+            {
+                "name": "walletBuyer",
+                "type": "address"
+            },
+            {
+                "name": "creationDate",
+                "type": "uint256"
+            },
+            {
+                "name": "statusDate",
+                "type": "uint256"
+            },
+            {
+                "name": "status",
+                "type": "uint8"
+            }
+        ],
+        "payable": false,
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "constant": false,
+        "inputs": [
+            {
+                "name": "_dealID",
+                "type": "uint256"
+            }
+        ],
+        "name": "cancelDeal",
+        "outputs": [],
+        "payable": false,
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "constant": false,
+        "inputs": [],
+        "name": "renounceOwnership",
+        "outputs": [],
+        "payable": false,
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "constant": false,
+        "inputs": [
+            {
+                "name": "_dealID",
+                "type": "uint256"
+            }
+        ],
+        "name": "acceptDeal",
+        "outputs": [],
+        "payable": true,
+        "stateMutability": "payable",
+        "type": "function"
+    },
+    {
+        "constant": true,
+        "inputs": [],
+        "name": "owner",
+        "outputs": [
+            {
+                "name": "",
+                "type": "address"
+            }
+        ],
+        "payable": false,
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "constant": true,
+        "inputs": [],
+        "name": "isOwner",
+        "outputs": [
+            {
+                "name": "",
+                "type": "bool"
+            }
+        ],
+        "payable": false,
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "constant": true,
+        "inputs": [],
+        "name": "totalDeals",
+        "outputs": [
+            {
+                "name": "",
+                "type": "uint256"
+            }
+        ],
+        "payable": false,
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "constant": true,
+        "inputs": [],
+        "name": "currentTime",
+        "outputs": [
+            {
+                "name": "",
+                "type": "uint256"
+            }
+        ],
+        "payable": false,
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "constant": false,
+        "inputs": [
+            {
+                "name": "_dealID",
+                "type": "uint256"
+            }
+        ],
+        "name": "revertDeal",
+        "outputs": [],
+        "payable": false,
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "constant": false,
+        "inputs": [
+            {
+                "name": "newOwner",
+                "type": "address"
+            }
+        ],
+        "name": "transferOwnership",
+        "outputs": [],
+        "payable": false,
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "constant": false,
+        "inputs": [
+            {
+                "name": "_tokenAddressOffer",
+                "type": "address"
+            },
+            {
+                "name": "_amountOffered",
+                "type": "uint256"
+            },
+            {
+                "name": "_tokenAddressRequest",
+                "type": "address"
+            },
+            {
+                "name": "_amountRequest",
+                "type": "uint256"
+            }
+        ],
+        "name": "createDeal",
+        "outputs": [],
+        "payable": true,
+        "stateMutability": "payable",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "payable": false,
+        "stateMutability": "nonpayable",
+        "type": "constructor"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": false,
+                "name": "dealID",
+                "type": "uint256"
+            },
+            {
+                "indexed": false,
+                "name": "_dealOwner",
+                "type": "address"
+            },
+            {
+                "indexed": false,
+                "name": "_tokenOffer",
+                "type": "address"
+            },
+            {
+                "indexed": false,
+                "name": "_amountOffered",
+                "type": "uint256"
+            },
+            {
+                "indexed": false,
+                "name": "_tokenRequest",
+                "type": "address"
+            },
+            {
+                "indexed": false,
+                "name": "_amountRequest",
+                "type": "uint256"
+            }
+        ],
+        "name": "NewDeal",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": false,
+                "name": "dealID",
+                "type": "uint256"
+            }
+        ],
+        "name": "DealCanceled",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": false,
+                "name": "dealID",
+                "type": "uint256"
+            },
+            {
+                "indexed": false,
+                "name": "_buyer",
+                "type": "address"
+            },
+            {
+                "indexed": false,
+                "name": "_tokenRequest",
+                "type": "address"
+            },
+            {
+                "indexed": false,
+                "name": "_amountRequest",
+                "type": "uint256"
+            }
+        ],
+        "name": "DealAccepted",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": true,
+                "name": "previousOwner",
+                "type": "address"
+            },
+            {
+                "indexed": true,
+                "name": "newOwner",
+                "type": "address"
+            }
+        ],
+        "name": "OwnershipTransferred",
+        "type": "event"
+    }
+]

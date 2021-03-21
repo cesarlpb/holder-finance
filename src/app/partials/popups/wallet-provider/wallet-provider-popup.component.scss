@@ -1,0 +1,27 @@
+div.content#popup-wallet-provider {
+  width: 560px;
+  padding: 0 25px;
+  box-sizing: content-box;
+  
+  div.card {
+    div.body {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 64px;
+
+      div.button.circular {
+        width: 128px;
+        height: 128px;
+        margin-right: 94px;
+
+        &:last-child {
+          margin-right: 0;
+        }
+
+        img {
+          filter: drop-shadow(0px 0px 4px rgb(0, 0, 0, 0.4));
+        }
+      }
+    }
+  }
+}

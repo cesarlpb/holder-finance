@@ -1,0 +1,127 @@
+@use 'src/colors' as c;
+@use 'src/fonts' as f;
+
+%limit-trade-popup {
+  div.content#popup-limit-trade {
+    div.card {
+      div.body {
+        background-color: #f0f0f1;
+
+        .loader {
+          border: 16px solid #e9e9e9;
+          border-top: 16px solid c.$primary-one;
+        }
+
+        h4 {
+          color: c.$primary-one;
+        }
+
+        ul {
+          border-top: solid 1px c.$grey;
+          border-bottom: solid 1px c.$grey;
+
+          li {
+            border-bottom: solid 1px c.$grey;
+
+            span {
+              &.actions {
+                i:not(.no-actions) {
+                  border: solid 1px #e9e9e9;
+                  background-color: c.$light;
+
+                  &.cancel {
+                    background-image: url(/assets/icons/trash.svg);
+                  }
+
+                  &.confirm {
+                    background-image: url(/assets/icons/confirm.svg);
+                    background-size: 12px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      div.footer {
+        p {
+          input {
+            background: white;
+            border: solid 1px #e9e9e9;
+          }
+
+          span.button.apply {
+            color: c.$primary-one;
+            background-color: c.$light;
+            border: solid 1px #e9e9e9;
+          }
+        }
+      }
+    }
+  }
+}
+
+%limit-trade-popup-dark {
+  div.content#popup-limit-trade {
+    div.card {
+      color: c.$light;
+
+      div.body {
+        background-color: rgba(230, 230, 230, 0.1);
+
+        .loader {
+          border: 16px solid c.$dark;
+          border-top: 16px solid c.$dark-one;
+        }
+
+        h4 {
+          color: c.$light;
+        }
+
+        ul {
+          border-top: solid 1px c.$dark;
+          border-bottom: solid 1px c.$dark;
+
+          li {
+            border-bottom: solid 1px c.$dark;
+
+            span {
+              &.actions {
+                i:not(.no-actions) {
+                  border: solid 1px #e9e9e9;
+                  background-color: c.$light;
+
+                  &.cancel {
+                    background-image: url(/assets/icons/trash.svg);
+                  }
+
+                  &.confirm {
+                    background-image: url(/assets/icons/confirm.svg);
+                    background-size: 12px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      div.footer {
+        p {
+          input {
+            color: c.$light;
+            background: c.$dark;
+            border: solid 1px c.$dark-one;
+          }
+
+          span.button.apply {
+            color: c.$light;
+            background-color: c.$dark;
+            border: solid 1px c.$dark-one;
+          }
+        }
+      }
+    }
+  }
+}

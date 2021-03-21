@@ -1,0 +1,97 @@
+@use 'src/colors' as c;
+@use 'src/fonts' as f;
+@use 'src/variables' as v;
+
+%card {
+  div.card {
+    position: relative;
+    padding: 60px 86px 50px;
+    border-radius: 45px;
+    box-shadow: c.$box-shadow;
+    background-color: c.$light;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      top: 20px;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+    }
+
+    &::before {
+      left: 20px;
+      box-shadow: rgb(0, 0, 0, 0.2) -1.5px 1.5px 4px;
+    }
+
+    &::after {
+      right: 20px;
+      box-shadow: rgb(0, 0, 0, 0.2) 1.5px 1.5px 4px;
+    }
+
+    h2 {
+      font-size: 25px;
+      font-weight: f.$black;
+      text-align: center;
+      line-height: 25px;
+      margin-bottom: 15px;
+
+      span {
+        color: c.$primary-one;
+      }
+    }
+
+    div.body {
+      margin-bottom: 56px;
+
+      p {
+        text-align: justify;
+      }
+    }
+
+    div.buttons {
+      display: flex;
+      justify-content: center;
+
+      span.button {
+        margin-right: 84px;
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+
+  @media only screen and (max-width: v.$small) {
+    div.card {
+      padding: 60px 30px 50px;
+    }
+  }
+}
+
+%card-dark {
+  div.card {
+    background-color: c.$dark-one;
+
+    &::before,
+    &::after {
+      background-color: c.$dark;
+    }
+
+    h2 {
+      color: c.$light;
+
+      span {
+        color: c.$light;
+      }
+    }
+
+    div.body {
+      p {
+        color: c.$light;
+      }
+    }
+  }
+}

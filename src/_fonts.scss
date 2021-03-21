@@ -1,0 +1,83 @@
+@font-face {
+  font-family: Gotham;
+  font-weight: 300;
+  src: url(assets/fonts/Gotham/Gotham-Light-Regular.otf);
+}
+
+@font-face {
+  font-family: Gotham;
+  font-weight: 400;
+  src: url(assets/fonts/Gotham/Gotham-Book.otf);
+}
+
+@font-face {
+  font-family: Gotham;
+  font-weight: 400;
+  font-style: italic;
+  src: url(assets/fonts/Gotham/Gotham-Book-Italic.otf);
+}
+
+@font-face {
+  font-family: Gotham;
+  font-weight: 400;
+  font-stretch: condensed;
+  src: url(assets/fonts/Gotham/Gotham-Book-Regular.otf);
+}
+
+@font-face {
+  font-family: Gotham;
+  font-weight: 500;
+  src: url(assets/fonts/Gotham/Gotham-Medium.otf);
+}
+
+@font-face {
+  font-family: Gotham;
+  font-weight: 500;
+  font-style: italic;
+  src: url(assets/fonts/Gotham/Gotham-Medium-Italic.otf);
+}
+
+@font-face {
+  font-family: Gotham;
+  font-weight: 700;
+  src: url(assets/fonts/Gotham/Gotham-Bold.otf);
+}
+
+@font-face {
+  font-family: Gotham;
+  font-weight: 700;
+  font-style: italic;
+  src: url(assets/fonts/Gotham/Gotham-Bold-Italic.otf);
+}
+
+@font-face {
+  font-family: Gotham;
+  font-weight: 900;
+  src: url(assets/fonts/Gotham/Gotham-Black.otf);
+}
+
+@font-face {
+  font-family: Gotham;
+  font-weight: 900;
+  font-style: italic;
+  src: url(assets/fonts/Gotham/Gotham-Black-Italic.otf);
+}
+
+@font-face {
+  font-family: Gotham;
+  font-weight: 950;
+  src: url(assets/fonts/Gotham/Gotham-Ultra.otf);
+}
+
+@font-face {
+  font-family: Gotham;
+  font-weight: 950;
+  font-style: italic;
+  src: url(assets/fonts/Gotham/Gotham-Ultra-Italic.otf);
+}
+
+$light: 300;
+$medium: 500;
+$bold: 700;
+$black: 900;
+$ultra: 950;

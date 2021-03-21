@@ -1,0 +1,59 @@
+@use 'src/colors' as c;
+
+%documents-popup {
+  div.content#popup-documents {
+    div.card {
+      div.body {
+        ul {
+          li {
+            a {
+              span.icon {
+                background: url(/assets/icons/pdf.svg) no-repeat center;
+              }
+            }
+
+            &:not(.disabled):hover {
+              span.icon {
+                background-image: url(/assets/icons/pdf-hover.svg);
+              }
+            }
+
+            &.disabled {
+              opacity: 0.4;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+%documents-popup-dark {
+  div.content#popup-documents {
+    div.card {
+      div.body {
+        color: c.$light;
+
+        ul {
+          li {
+            a {
+              span.icon {
+                background: url(/assets/icons/pdf-dark.svg) no-repeat center;
+              }
+            }
+
+            &:not(.disabled):hover {
+              span.icon {
+                background-image: url(/assets/icons/pdf-hover-dark.svg);
+              }
+            }
+
+            &.disabled {
+              opacity: 0.7;
+            }
+          }
+        }
+      }
+    }
+  }
+}

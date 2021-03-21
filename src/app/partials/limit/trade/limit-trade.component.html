@@ -1,0 +1,356 @@
+<div id="limit-trade">
+  <div class="card">
+    <div class="column left">
+      <div class="from">
+        <div class="background"></div>
+
+        <div class="content">
+          <h3>
+            <span>FROM</span> <span>BALANCE: {{ from.balance }}</span>
+          </h3>
+
+          <div class="info">
+            <span contenteditable="true" #fromEditable>{{ from.amount }}</span>
+
+            <div class="crypto">
+              <div class="background"></div>
+
+              <span class="button max" (click)="max()">MAX</span>
+
+              <div class="value" (click)="selectPair()">
+                <span
+                  class="icon"
+                  [ngStyle]="{
+                    'background-image': 'url(' + from.icon + ')',
+                    'background-size': 'contain'
+                  }"
+                ></span>
+                {{ from.name }}
+                <span class="button change"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h4 class="price">
+        <span
+          >{{
+            (ratio.selected === "ONE-TO" ? ratio.oneTo : ratio.oneFrom) +
+              " " +
+              (ratio.selected === "ONE-TO" ? to.name : from.name)
+          }}
+          per {{ ratio.selected === "ONE-TO" ? from.name : to.name }}</span
+        >
+        <span class="icon" (click)="toggleRatio()"></span>
+      </h4>
+
+      <div class="to">
+        <div class="background"></div>
+
+        <div class="content">
+          <h3>
+            <span>TO (ESTIMATED)</span> <span>BALANCE: {{ to.balance }}</span>
+          </h3>
+
+          <div class="info">
+            <span contenteditable="true" #toEditable>{{ to.amount }}</span>
+
+            <div class="crypto" (click)="selectPair()">
+              <div class="background"></div>
+
+              <div class="value">
+                <span
+                  class="icon"
+                  [ngStyle]="{
+                    'background-image': 'url(' + to.icon + ')',
+                    'background-size': 'contain'
+                  }"
+                ></span>
+                {{ to.name }}
+                <span class="button change"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="buttons">
+        <span class="button" (click)="marketTrade()">{{ calculatePriceTxt }}</span>
+        <span class="button" *ngIf="!showApproveButton" (click)="limitTrade()"
+          >LIMIT TRADE</span
+        >
+        <span class="button" *ngIf="showApproveButton" (click)="approve()"
+          >APPROVE {{ from.name }}</span
+        >
+      </div>
+
+      <div class="more-info radius-box">
+        <ul>
+          <li>
+            <h3>MINIMUM RECEIVED</h3>
+            <p>{{ moreInfo.minReceived }} {{ to.name }}</p>
+          </li>
+          <li>
+            <h3>PRICE IMPACT</h3>
+            <p
+              class="black"
+              [ngClass]="{
+                positive: moreInfo.impact > 0,
+                negative: moreInfo.impact < 0
+              }"
+            >
+              {{ moreInfo.impact }}%
+            </p>
+          </li>
+          <li>
+            <h3>LIQUIDITY PROVIDER FEE</h3>
+            <p>{{ moreInfo.liquidity + " " + from.name }}</p>
+          </li>
+        </ul>
+      </div>
+
+      <div class="extra-info">
+        <div *ngFor="let box of info" class="radius-box">
+          <h3>{{ box.title }}</h3>
+
+          <p>USD {{ box.total }}</p>
+        </div>
+
+        <div class="radius-box">
+          <h3>LIQUIDITY</h3>
+
+          <div>
+            <p class="to">
+              <span
+                class="icon"
+                [ngStyle]="{
+                  'background-image': 'url(' + to.icon + ')',
+                  'background-size': 'contain'
+                }"
+              ></span
+              >{{ liquidity.to + " " + to.name }}
+            </p>
+
+            <p class="from">
+              <span
+                class="icon"
+                [ngStyle]="{
+                  'background-image': 'url(' + from.icon + ')',
+                  'background-size': 'contain'
+                }"
+              ></span
+              >{{ liquidity.from + " " + from.name }}
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="pair-info radius-box">
+        <h3>PAIR INFORMATION</h3>
+
+        <div class="boxes">
+          <div class="name">
+            <p>PAIR NAME</p>
+            <p class="value">{{ to.name }}-{{ from.name }}</p>
+          </div>
+
+          <div>
+            <p>PAIR ADDRESS</p>
+            <p class="value">
+              {{ pair.address | hideWallet }} <span class="copy"></span>
+            </p>
+          </div>
+
+          <div>
+            <p>{{ to.name }} ADDRESS</p>
+            <p class="value">
+              {{ to.address | hideWallet }} <span class="copy"></span>
+            </p>
+          </div>
+
+          <div>
+            <p>{{ from.name }} ADDRESS</p>
+            <p class="value">
+              {{ from.address | hideWallet }} <span class="copy"></span>
+            </p>
+          </div>
+        </div>
+
+        <div class="buttons">
+          <a
+            target="_BLANK"
+            [href]="'https://etherscan.io/address/' + pair.address"
+            class="button"
+            >VIEW ON ETHERSCAN</a
+          >
+        </div>
+      </div>
+
+      <div class="buttons">
+        <span class="button" (click)="openLimitTrade()">ALL TRADES</span>
+      </div>
+
+      <p class="smart-alert">
+        This software is a smart contract based technology, please use it at
+        your own risk.
+      </p>
+    </div>
+
+    <div class="column right">
+      <div class="graph radius-box">
+        <div class="top-buttons" *ngIf="false">
+          <div class="type">
+            <span
+              (click)="setGraphMode('LIQUIDITY')"
+              [ngClass]="{ button: true, active: graphMode === 'LIQUIDITY' }"
+              >LIQUIDITY</span
+            >
+            <span
+              (click)="setGraphMode('VOLUME')"
+              [ngClass]="{ button: true, active: graphMode === 'VOLUME' }"
+              >VOLUME</span
+            >
+            <span
+              (click)="setGraphMode('TO-FROM')"
+              [ngClass]="{ button: true, active: graphMode === 'TO-FROM' }"
+              >{{ to.name }}/{{ from.name }}</span
+            >
+            <span
+              (click)="setGraphMode('FROM-TO')"
+              [ngClass]="{ button: true, active: graphMode === 'FROM-TO' }"
+              >{{ from.name }}/{{ to.name }}</span
+            >
+          </div>
+
+          <div class="interval">
+            <span
+              (click)="setGraphPeriod('WEEK')"
+              [ngClass]="{ button: true, active: graphPeriod === 'WEEK' }"
+              >1W</span
+            >
+            <span
+              (click)="setGraphPeriod('MONTH')"
+              [ngClass]="{ button: true, active: graphPeriod === 'MONTH' }"
+              >1M</span
+            >
+            <span
+              (click)="setGraphPeriod('ALL')"
+              [ngClass]="{ button: true, active: graphPeriod === 'ALL' }"
+              >ALL</span
+            >
+          </div>
+        </div>
+        <!-- TradingView Widget BEGIN -->
+        <div class="tradingview-widget-container">
+          <div id="tradingview_00ae5"></div>
+        </div>
+        <!-- TradingView Widget END -->
+      </div>
+
+      <div class="transactions radius-box">
+        <h4>TRANSACTIONS</h4>
+
+        <div class="buttons" *ngIf="false">
+          <div class="type">
+            <span class="button">{{ transactionsStatus.type }}</span>
+          </div>
+          <div class="value" (click)="toggleTransactionValue()">
+            <span class="button">TOTAL VALUE</span>
+          </div>
+          <div class="date" (click)="toggleTransactionDate()">
+            <span class="button">TIME</span>
+          </div>
+        </div>
+
+        <h6 class="header">
+          <span class="type">{{ transactionsStatus.type }}</span>
+          <span class="value">Total value</span>
+          <span class="date">Time</span>
+        </h6>
+
+        <ul>
+          <li *ngFor="let transaction of transactions">
+            <span class="type">{{ transaction.type }}</span>
+            <span class="value">{{ transaction.value }}</span>
+            <span class="date">{{ transaction.created | toHumanTime }}</span>
+          </li>
+
+          <li *ngIf="!transactions.length">Loading...</li>
+        </ul>
+      </div>
+
+      <div class="orders radius-box">
+        <h4>TRADE LIMIT REQUESTS</h4>
+
+        <div class="top-buttons">
+          <input
+            type="number"
+            [(ngModel)]="inputFee"
+            value="1"
+            class="input-fee"
+          />% fee
+          <span class="button apply" (click)="getLimitOrders()">APPLY</span>
+          <span
+            *ngIf="false"
+            [ngClass]="{
+              button: true,
+              all: true,
+              active: orderVisibility === 'ALL'
+            }"
+            (click)="updateOrderVisibility('ALL')"
+          ></span>
+          <span
+            *ngIf="false"
+            [ngClass]="{
+              button: true,
+              under: true,
+              active: orderVisibility === 'UNDER'
+            }"
+            (click)="updateOrderVisibility('UNDER')"
+          ></span>
+          <span
+            *ngIf="false"
+            [ngClass]="{
+              button: true,
+              over: true,
+              active: orderVisibility === 'OVER'
+            }"
+            (click)="updateOrderVisibility('OVER')"
+          ></span>
+        </div>
+
+        <h6 class="header">
+          <span class="request">Request</span>
+          <span class="fee">Fee</span>
+          <span class="actions">Actions</span>
+        </h6>
+
+        <ul>
+          <li *ngFor="let order of limitOrders" class="over">
+            <span class="request positive">{{ order.desc }}</span>
+            <span class="fee">{{ order.fee }}</span>
+            <span class="actions"
+              ><i
+                class="cancel"
+                *ngIf="order.owner"
+                (click)="cancelOrder(order.ID)"
+              ></i
+              ><i
+                class="confirm"
+                *ngIf="order.profitable"
+                (click)="executeOrder(order.ID)"
+              >
+              </i>
+              <span *ngIf="!order.profitable" class="no-profitable"></span>
+            </span>
+          </li>
+
+          <li *ngIf="!limitOrders || !limitOrders.length">
+            {{ limitOrders === null ? "Loading..." : "No data available." }}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

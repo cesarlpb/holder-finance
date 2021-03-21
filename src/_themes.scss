@@ -1,0 +1,27 @@
+@use 'src/app/app.theme';
+@use 'src/app/components/popups/popups.theme';
+@use 'src/app/partials/popups/limit-trade/limit-trade-popup.theme';
+@use 'src/app/partials/popups/documents/documents-popup.theme';
+@use 'src/app/partials/navbar/navbar.theme';
+@use 'src/app/partials/limit/select-pair/limit-select-pair.theme';
+@use 'src/app/partials/limit/trade/limit-trade.theme';
+
+%themes {
+  @extend %app;
+  @extend %navbar;
+  @extend %popups;
+  @extend %limit-trade-popup;
+  @extend %documents-popup;
+  @extend %limit-select-pair;
+  @extend %limit-trade;
+}
+
+%themes-dark {
+  @extend %app-dark;
+  @extend %navbar-dark;
+  @extend %popups-dark;
+  @extend %limit-trade-popup-dark;
+  @extend %documents-popup-dark;
+  @extend %limit-select-pair-dark;
+  @extend %limit-trade-dark;
+}
