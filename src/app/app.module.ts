@@ -12,9 +12,10 @@ import { NavbarComponent } from './partials/navbar/navbar.component';
 import { PipesModule } from './pipes/pipes.modules';
 import { EthereumService } from './services/ethereum.service';
 import { LimitOrderService } from './services/limitorder.service';
+import { ModalPopupComponent } from './modal-popup/modal-popup.component';
 
 @NgModule({
-  declarations: [AppComponent, NavbarComponent, SwapComponent, OtcComponent],
+  declarations: [AppComponent, NavbarComponent, SwapComponent, OtcComponent, ModalPopupComponent],
   imports: [
     environment.production ? [] : AkitaNgDevtools.forRoot(),
     BrowserModule,
