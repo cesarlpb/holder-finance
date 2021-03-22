@@ -5,6 +5,9 @@ import { EthereumService } from './services/ethereum.service';
 import { AppQuery } from './akita/queries/app.query';
 import { AppService } from './akita/services/app.service';
 
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { ModalPopupComponent } from './components/modal-popup/modal-popup.component';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -17,7 +20,8 @@ export class AppComponent implements OnInit {
   constructor(
     private readonly ethereumService: EthereumService,
     readonly appService: AppService,
-    readonly appQuery: AppQuery
+    readonly appQuery: AppQuery,
+    public matDialog: MatDialog 
   ) {}
 
   ngOnInit(): void {
@@ -45,5 +49,16 @@ export class AppComponent implements OnInit {
     if (!event.target.classList.contains('show-links')) {
       this.app.data.setMenuOpened(false);
     }
+  }
+
+  openModal() {
+    const dialogConfig = new MatDialogConfig();
+    // The user can't close the dialog by clicking outside its body
+    dialogConfig.disableClose = true;
+    dialogConfig.id = "modal-component";
+    dialogConfig.height = "350px";
+    dialogConfig.width = "600px";
+    // https://material.angular.io/components/dialog/overview
+    const modalDialog = this.matDialog.open(ModalPopupComponent, dialogConfig);
   }
 }

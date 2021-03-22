@@ -12,10 +12,19 @@ import { NavbarComponent } from './partials/navbar/navbar.component';
 import { PipesModule } from './pipes/pipes.modules';
 import { EthereumService } from './services/ethereum.service';
 import { LimitOrderService } from './services/limitorder.service';
-import { ModalPopupComponent } from './modal-popup/modal-popup.component';
+import { ModalPopupComponent } from './components/modal-popup/modal-popup.component';
+import { MatButtonModule } from '@angular/material/button';
+import { MatDialogModule } from '@angular/material/dialog';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
-  declarations: [AppComponent, NavbarComponent, SwapComponent, OtcComponent, ModalPopupComponent],
+  declarations: [
+    AppComponent, 
+    NavbarComponent, 
+    SwapComponent, 
+    OtcComponent, 
+    ModalPopupComponent
+  ],
   imports: [
     environment.production ? [] : AkitaNgDevtools.forRoot(),
     BrowserModule,
@@ -23,8 +32,12 @@ import { ModalPopupComponent } from './modal-popup/modal-popup.component';
     PipesModule,
     LimitModule,
     PopupsModule,
+    MatButtonModule,
+    BrowserAnimationsModule,
+    MatDialogModule
   ],
   providers: [EthereumService, LimitOrderService],
   bootstrap: [AppComponent],
+  entryComponents: [ModalPopupComponent]
 })
 export class AppModule {}
